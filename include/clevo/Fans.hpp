@@ -1,6 +1,7 @@
 #pragma once
 
 #include "clevo/Error.hpp"
+#include "clevo/Export.hpp"
 
 #include <cstdint>
 #include <memory>
@@ -56,9 +57,9 @@ struct FanCurve {
 
 // Temperatures must strictly increase towards the ceiling and duties must
 // not decrease.
-[[nodiscard]] Status validate(const FanCurve &curve);
+[[nodiscard]] CLEVO_SDK_EXPORT Status validate(const FanCurve &curve);
 
-class FanController {
+class CLEVO_SDK_EXPORT FanController {
 public:
     explicit FanController(std::shared_ptr<DchuTransport> transport);
 

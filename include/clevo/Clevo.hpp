@@ -3,6 +3,7 @@
 #include "clevo/Capabilities.hpp"
 #include "clevo/Device.hpp"
 #include "clevo/Error.hpp"
+#include "clevo/Export.hpp"
 #include "clevo/Fans.hpp"
 #include "clevo/Keyboard.hpp"
 #include "clevo/LightingEffects.hpp"

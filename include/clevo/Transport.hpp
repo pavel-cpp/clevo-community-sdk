@@ -1,6 +1,7 @@
 #pragma once
 
 #include "clevo/Error.hpp"
+#include "clevo/Export.hpp"
 
 #include <array>
 #include <cstdint>
@@ -16,7 +17,7 @@ using Packet = std::array<std::uint8_t, 256>;
 // The raw operations exposed by the Insyde DCHU driver. The typed controllers
 // are built on top of this; it is public so tools can issue commands the SDK
 // does not model yet, and so tests can substitute a fake.
-class DchuTransport {
+class CLEVO_SDK_EXPORT DchuTransport {
 public:
     virtual ~DchuTransport() = default;
 
@@ -33,7 +34,7 @@ public:
 
 // Loads InsydeDCHU.dll. A bare file name is resolved from the application
 // directory and System32 only, never from the current working directory.
-[[nodiscard]] Result<std::unique_ptr<DchuTransport>> openInsydeTransport(
+[[nodiscard]] CLEVO_SDK_EXPORT Result<std::unique_ptr<DchuTransport>> openInsydeTransport(
     const std::filesystem::path &library = L"InsydeDCHU.dll");
 
 } // namespace clevo

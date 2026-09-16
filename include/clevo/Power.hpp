@@ -1,5 +1,7 @@
 #pragma once
 
+#include "clevo/Export.hpp"
+
 #include <cstdint>
 #include <memory>
 #include <optional>
@@ -15,7 +17,7 @@ enum class PowerProfile : std::uint8_t {
     Entertainment = 3,
 };
 
-class PowerController {
+class CLEVO_SDK_EXPORT PowerController {
 public:
     explicit PowerController(std::shared_ptr<DchuTransport> transport);
 

@@ -1,0 +1,10 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/ClevoCommunitySDKTargets.cmake")
+
+set_and_check(CLEVO_SDK_RUNTIME_DLL "@PACKAGE_CLEVO_SDK_INSTALL_RUNTIME_DLL@")
+set_property(GLOBAL PROPERTY CLEVO_SDK_RUNTIME_DLL "${CLEVO_SDK_RUNTIME_DLL}")
+
+include("${CMAKE_CURRENT_LIST_DIR}/ClevoCommunitySDKRuntime.cmake")
+
+check_required_components(ClevoCommunitySDK)

@@ -2,6 +2,7 @@
 
 #include "clevo/Capabilities.hpp"
 #include "clevo/Error.hpp"
+#include "clevo/Export.hpp"
 #include "clevo/Fans.hpp"
 #include "clevo/Keyboard.hpp"
 #include "clevo/Power.hpp"
@@ -14,7 +15,7 @@ namespace clevo {
 
 // Entry point of the SDK. Controllers are lightweight handles sharing the
 // device's transport, so they may be copied and outlive the Device.
-class Device {
+class CLEVO_SDK_EXPORT Device {
 public:
     [[nodiscard]] static Result<Device> open();
 

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "clevo/Export.hpp"
+
 #include <cstdint>
 #include <string_view>
 #include <vector>
@@ -16,7 +18,7 @@ struct CapabilityFlag {
 // What the firmware reports this machine supports. Newer BIOSes publish a
 // versioned feature block; older ones only answer the individual queries, and
 // both sources are normalised into the same fields.
-struct Capabilities {
+struct CLEVO_SDK_EXPORT Capabilities {
     // Performance and power
     bool powerProfiles = false;
     bool cpuOverclocking = false;

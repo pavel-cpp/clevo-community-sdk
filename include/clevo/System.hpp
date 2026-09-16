@@ -1,5 +1,7 @@
 #pragma once
 
+#include "clevo/Export.hpp"
+
 #include <memory>
 #include <string>
 
@@ -7,7 +9,7 @@ namespace clevo {
 
 class DchuTransport;
 
-class SystemController {
+class CLEVO_SDK_EXPORT SystemController {
 public:
     explicit SystemController(std::shared_ptr<DchuTransport> transport);
 

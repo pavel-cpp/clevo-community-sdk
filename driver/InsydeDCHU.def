@@ -1,0 +1,8 @@
+LIBRARY InsydeDCHU.dll
+EXPORTS
+    GetDCHU_Data_Buffer
+    GetDCHU_Data_Integer
+    ReadAppSettings
+    SetDCHU_Data
+    SetDCHU_DataEx
+    WriteAppSettings

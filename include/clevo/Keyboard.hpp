@@ -1,6 +1,7 @@
 #pragma once
 
 #include "clevo/Error.hpp"
+#include "clevo/Export.hpp"
 
 #include <chrono>
 #include <cstdint>
@@ -41,7 +42,7 @@ struct KeyboardState {
     std::optional<std::chrono::seconds> sleepTimeout;
 };
 
-class KeyboardController {
+class CLEVO_SDK_EXPORT KeyboardController {
 public:
     static constexpr std::chrono::seconds MaxSleepTimeout{0xFFFF};
 

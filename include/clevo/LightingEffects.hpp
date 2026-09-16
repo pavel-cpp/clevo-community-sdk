@@ -1,5 +1,6 @@
 #pragma once
 
+#include "clevo/Export.hpp"
 #include "clevo/Keyboard.hpp"
 
 #include <chrono>
@@ -25,17 +26,19 @@ struct LightFrame {
 // effect can be previewed, tested or driven by an external timer.
 using SoftwareEffect = std::function<LightFrame(std::chrono::milliseconds elapsed)>;
 
-[[nodiscard]] std::vector<Rgb> defaultEffectPalette();
+[[nodiscard]] CLEVO_SDK_EXPORT std::vector<Rgb> defaultEffectPalette();
 
-[[nodiscard]] SoftwareEffect breathingEffect(Rgb color, std::chrono::milliseconds period);
-[[nodiscard]] SoftwareEffect colorCycleEffect(std::vector<Rgb> palette, std::chrono::milliseconds transition);
+[[nodiscard]] CLEVO_SDK_EXPORT SoftwareEffect breathingEffect(Rgb color, std::chrono::milliseconds period);
+[[nodiscard]] CLEVO_SDK_EXPORT SoftwareEffect colorCycleEffect(std::vector<Rgb> palette,
+                                                               std::chrono::milliseconds transition);
 // Breathes through the palette, moving to the next color at every dark point.
-[[nodiscard]] SoftwareEffect colorfulBreathingEffect(std::vector<Rgb> palette, std::chrono::milliseconds period);
+[[nodiscard]] CLEVO_SDK_EXPORT SoftwareEffect colorfulBreathingEffect(std::vector<Rgb> palette,
+                                                                      std::chrono::milliseconds period);
 
 // Plays a software effect on the keyboard from a background thread. Frames
 // are pushed straight to the firmware without touching the persistent
 // settings store, and unchanged values are not re-sent.
-class EffectPlayer {
+class CLEVO_SDK_EXPORT EffectPlayer {
 public:
     explicit EffectPlayer(std::shared_ptr<DchuTransport> transport);
     ~EffectPlayer();
