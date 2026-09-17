@@ -121,8 +121,10 @@ All public headers live under `include/clevo/`. `Clevo.hpp` includes them all.
 | `Error.hpp`           | `Result<T>` / `Status`, based on `std::expected`                         |
 
 Controllers are cheap handles that share the device's driver connection. You
-can copy them freely, and they may outlive the `Device`. Calls into the driver
-are serialised, so it is safe to use the SDK from several threads.
+can copy them freely, and they may outlive the `Device`. The vendor DLL is
+bound to the thread that first uses it, so the SDK runs every driver call on a
+dedicated thread and the calling thread waits for the result. That makes it
+safe to use the SDK from several threads, including the `EffectPlayer`'s.
 
 ## clevoctl
 
